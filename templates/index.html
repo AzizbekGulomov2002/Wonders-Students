@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<html>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Groups</title>
+</head>
+
+<body>
+  <section class="furniture_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <span style="text-align: center !important;">
+          <h2 style="text-align: center;"> 
+          Groups Lists
+        </h2>
+        </span>
+
+      </div>
+      <div class="row">
+        {% for i in Group %}
+        <div class="col-md-6 col-lg-4">        
+            <div class="box"> 
+            <div class="img-box">
+              <img style="height: 250px; width: 250px;" src="{{ i.image.url }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Group name: <b>{{ i.name }}</b>
+              </h5>
+              <div class="price_box">
+                <h6 class="price_heading">
+                  {% comment %} <span>Number of students</span> {{n}} {% endcomment %}
+                </h6>
+                <a href="group/{{i.id}}">
+                  Students
+                </a>
+              </div>
+            </div>
+            
+        </div>
+        </div>
+        {% endfor %}  
+    </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
+
+{% endblock content %}
